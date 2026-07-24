@@ -13,17 +13,17 @@ export const Footer = () => {
     };
 
     return (
-        <footer className="bg-primary-black border-t border-dark-gray pt-16 md:pt-24 pb-8 relative overflow-hidden">
+        <footer className="bg-primary-black border-t border-white/5 pt-24 md:pt-40 pb-12 relative overflow-hidden">
             {/* Background Accent */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-red/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-red/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
             <div className="container mx-auto px-6 md:px-12 lg:px-24">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16 md:mb-20 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-8 md:mb-10 relative z-10">
                     
                     {/* Brand Info & Newsletter (Spans 5 cols on lg) */}
                     <div className="space-y-8 lg:col-span-5 pr-0 lg:pr-12">
                         <Logo className="scale-110 origin-left" />
-                        <p className="text-gray-muted text-sm leading-relaxed max-w-sm">
+                        <p className="text-gray-muted/80 text-sm leading-relaxed max-w-sm font-light">
                             Exclusive modular kitchens and wardrobes. Uncompromising luxury and precision engineering. A legacy of craftsmanship by Aashish Jajoo.
                         </p>
                         
@@ -33,9 +33,9 @@ export const Footer = () => {
                                 <input 
                                     type="email" 
                                     placeholder="Enter your email" 
-                                    className="bg-dark-gray/30 border border-dark-gray text-white px-4 py-3 w-full max-w-xs focus:outline-none focus:border-primary-red transition-colors text-sm"
+                                    className="bg-dark-gray/20 border border-white/10 rounded-l-md text-white px-5 py-3 w-full max-w-xs focus:outline-none focus:border-primary-red/50 transition-colors text-sm font-light placeholder:text-gray-muted/50"
                                 />
-                                <Button variant="primary" className="py-3 px-6 shrink-0 h-[46px]">
+                                <Button variant="primary" className="py-3 px-6 shrink-0 h-[46px] rounded-l-none rounded-r-md">
                                     Join
                                 </Button>
                             </div>
@@ -47,24 +47,23 @@ export const Footer = () => {
                         {/* Quick Links */}
                         <div>
                             <h4 className="font-display font-bold text-sm text-white uppercase tracking-widest mb-4 border-l-2 border-primary-red pl-3">Company</h4>
-                            <ul className="space-y-2">
-                                {['About', 'Our Story', 'Craftsmanship', 'Why Choose Us'].map((link) => (
-                                    <li key={link}>
-                                        <Link href="#" className="text-gray-muted text-sm hover:text-primary-red transition-colors block py-1">{link}</Link>
-                                    </li>
-                                ))}
+                            <ul className="space-y-3">
+                                <li><Link href="/about" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">About</Link></li>
+                                <li><Link href="/about" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Our Story</Link></li>
+                                <li><Link href="/materials" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Craftsmanship</Link></li>
+                                <li><Link href="/contact" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Contact</Link></li>
                             </ul>
                         </div>
 
                         {/* Services Links */}
                         <div>
                             <h4 className="font-display font-bold text-sm text-white uppercase tracking-widest mb-4 border-l-2 border-primary-red pl-3">Services</h4>
-                            <ul className="space-y-2">
-                                {['Luxury Kitchens', 'Wardrobes', 'Walk-in Closets', 'TV Units', 'Materials', 'Portfolio'].map((link) => (
-                                    <li key={link}>
-                                        <Link href="#" className="text-gray-muted text-sm hover:text-primary-red transition-colors block py-1">{link}</Link>
-                                    </li>
-                                ))}
+                            <ul className="space-y-3">
+                                <li><Link href="/portfolio" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Luxury Kitchens</Link></li>
+                                <li><Link href="/portfolio" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Wardrobes</Link></li>
+                                <li><Link href="/portfolio" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">TV Units</Link></li>
+                                <li><Link href="/materials" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Materials</Link></li>
+                                <li><Link href="/portfolio" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Portfolio</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -92,9 +91,9 @@ export const Footer = () => {
                         </ul>
                         
                         {/* Social Icons */}
-                        <div className="flex items-center gap-4 pt-2">
+                        <div className="flex items-center gap-4 pt-4">
                             {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                                <a key={i} href="#" className="w-10 h-10 rounded-full border border-dark-gray flex items-center justify-center text-gray-muted hover:bg-primary-red hover:text-white hover:border-primary-red transition-all duration-300">
+                                <a key={i} href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-muted hover:bg-primary-red hover:text-white hover:border-primary-red hover:scale-105 transition-all duration-500 ease-[0.16,1,0.3,1] shadow-lg">
                                     <Icon className="w-4 h-4" />
                                 </a>
                             ))}

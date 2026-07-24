@@ -44,8 +44,8 @@ export const Header = () => {
             <motion.header 
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-                    scrolled ? 'bg-primary-black/90 backdrop-blur-xl shadow-lg shadow-black/20 py-4' : 'bg-transparent py-6'
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-[0.16,1,0.3,1] ${
+                    scrolled ? 'bg-primary-black/80 backdrop-blur-2xl border-b border-white/5 shadow-2xl py-2' : 'bg-transparent py-3'
                 }`}
             >
                 <div className="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
@@ -59,8 +59,12 @@ export const Header = () => {
                         {NAV_LINKS.slice(1, 5).map((link) => {
                             const isActive = pathname === link.href;
                             return (
-                                <Link key={link.label} href={link.href} className={`text-sm font-sans tracking-widest uppercase transition-colors whitespace-nowrap ${isActive ? 'text-primary-red font-bold' : 'text-gray-muted hover:text-white'}`}>
-                                    {link.label}
+                                <Link key={link.label} href={link.href} className="relative group">
+                                    <span className={`text-xs font-sans tracking-[0.2em] uppercase transition-colors duration-500 whitespace-nowrap ${isActive ? 'text-white' : 'text-gray-muted hover:text-white'}`}>
+                                        {link.label}
+                                    </span>
+                                    {/* Active Indicator Dot */}
+                                    <span className={`absolute -bottom-3 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary-red transition-all duration-500 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-75'}`} />
                                 </Link>
                             );
                         })}
@@ -72,9 +76,11 @@ export const Header = () => {
                             <Phone className="w-4 h-4 text-primary-red" />
                             <span className="text-sm font-medium tracking-wide">+91 7020171895</span>
                         </div>
-                        <Button variant="primary" className={`hidden sm:flex shadow-lg shadow-primary-red/20 py-3 px-6 transition-opacity duration-300 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                            Consultation
-                        </Button>
+                        <Link href="/contact" className={`hidden sm:flex transition-opacity duration-300 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} onClick={() => setMenuOpen(false)}>
+                            <Button variant="primary" className="shadow-lg shadow-primary-red/20 py-3 px-6">
+                                Consultation
+                            </Button>
+                        </Link>
                         <button 
                             onClick={() => setMenuOpen(!menuOpen)}
                             className="p-2 text-white hover:text-primary-red transition-colors"
@@ -111,9 +117,12 @@ export const Header = () => {
                                             <Link 
                                                 href={link.href} 
                                                 onClick={() => setMenuOpen(false)}
-                                                className={`font-display font-bold text-xl sm:text-2xl md:text-4xl transition-colors uppercase tracking-widest block py-2 ${isActive ? 'text-primary-red' : 'text-white hover:text-primary-red'}`}
+                                                className={`font-display font-medium text-3xl md:text-5xl transition-all duration-500 uppercase tracking-widest block py-2 ${isActive ? 'text-white translate-x-4' : 'text-gray-muted hover:text-white hover:translate-x-2'}`}
                                             >
-                                                {link.label}
+                                                <div className="flex items-center gap-6">
+                                                    <span className={`w-2 h-2 rounded-full bg-primary-red transition-all duration-500 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`} />
+                                                    {link.label}
+                                                </div>
                                             </Link>
                                         </motion.div>
                                     );
@@ -140,9 +149,11 @@ export const Header = () => {
                                         Nanded - 431601
                                     </p>
                                 </div>
-                                <Button variant="primary" className="w-fit mt-4">
-                                    Book a Visit
-                                </Button>
+                                <Link href="/contact" onClick={() => setMenuOpen(false)}>
+                                    <Button variant="primary" className="w-fit mt-4">
+                                        Book a Visit
+                                    </Button>
+                                </Link>
                             </motion.div>
                         </div>
                     </motion.div>

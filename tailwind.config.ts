@@ -9,16 +9,16 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                'primary-black': '#151515',
-                'dark-gray': '#2A2A2A',
-                'card-gray': '#1F1F1F',
-                'primary-red': '#D31E27',
-                'red-hover': '#B81A22',
-                'gray-muted': '#B0B0B0',
+                'primary-black': '#0A0E17',
+                'dark-gray': '#121826',
+                'card-gray': '#182030',
+                'primary-red': '#FF3344',
+                'red-hover': '#E6192E',
+                'gray-muted': '#94A3B8',
             },
             fontFamily: {
                 sans: ['var(--font-inter)', 'sans-serif'],
-                display: ['var(--font-space-grotesk)', 'sans-serif'],
+                display: ['var(--font-playfair-display)', 'serif'],
             },
             letterSpacing: {
                 tighter: '-0.02em',

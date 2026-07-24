@@ -6,36 +6,42 @@ import Link from "next/link";
 
 export default function AboutPage() {
     return (
-        <main className="pt-24 md:pt-32 pb-16 md:pb-24 bg-primary-black min-h-screen">
-            <div className="container mx-auto px-6 md:px-12 lg:px-24 max-w-7xl">
+        <main className="pt-32 md:pt-48 pb-24 md:pb-40 bg-primary-black min-h-screen relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-red/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+            
+            <div className="container mx-auto px-6 md:px-12 lg:px-24 max-w-[1400px] relative z-10">
                 
                 {/* Hero */}
-                <FadeIn className="mb-20 md:mb-32">
-                    <p className="font-sans text-primary-red text-xs uppercase tracking-[0.3em] font-bold mb-4 md:mb-6 mt-4 md:mt-0">Our Story</p>
-                    <h1 className="font-display font-bold text-3xl md:text-6xl lg:text-7xl text-white uppercase leading-tight tracking-tight max-w-4xl">
-                        A Legacy of <br/><span className="text-dark-gray">Precision &amp; Design.</span>
+                <FadeIn className="mb-24 md:mb-40">
+                    <p className="font-sans text-primary-red text-xs md:text-sm uppercase tracking-[0.3em] font-bold mb-6 md:mb-8">Our Story</p>
+                    <h1 className="font-display font-bold text-4xl md:text-7xl lg:text-[7rem] text-white uppercase leading-[0.9] tracking-tighter max-w-5xl text-balance">
+                        A Legacy of <br/><span className="text-white/30">Precision &amp; Design.</span>
                     </h1>
                 </FadeIn>
 
                 {/* Founder Vision */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center mb-20 md:mb-32">
-                    <FadeIn direction="right" className="relative h-[400px] md:h-[700px] bg-[#0a0a0a] border border-dark-gray flex items-center justify-center">
-                        <div className="text-gray-muted/20 font-display uppercase tracking-widest text-sm">Portrait Placeholder</div>
-                        <div className="absolute -bottom-10 -right-10 w-48 md:w-64 h-48 md:h-64 bg-primary-red/5 blur-[80px]" />
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center mb-24 md:mb-48">
+                    <FadeIn direction="right" className="relative h-[500px] md:h-[800px] bg-[#0a0a0a] border border-white/5 rounded-2xl flex items-center justify-center overflow-hidden group">
+                        <div className="absolute inset-0 opacity-20 group-hover:scale-110 transition-transform duration-[2000ms] ease-[0.16,1,0.3,1]">
+                            <div className="w-full h-full" style={{ backgroundImage: "radial-gradient(#333 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+                        </div>
+                        <div className="text-gray-muted/20 font-display uppercase tracking-widest text-sm relative z-10">Portrait Placeholder</div>
+                        <div className="absolute -bottom-20 -right-20 w-64 md:w-96 h-64 md:h-96 bg-primary-red/10 blur-[100px]" />
                     </FadeIn>
                     
-                    <FadeIn direction="left" className="space-y-6 md:space-y-8">
-                        <h2 className="font-display font-bold text-2xl md:text-4xl text-white uppercase tracking-wider">The Founder's Vision</h2>
-                        <div className="w-16 h-1 bg-primary-red" />
-                        <p className="text-gray-muted text-base md:text-lg leading-relaxed">
+                    <FadeIn direction="left" className="space-y-8 md:space-y-10">
+                        <h2 className="font-display font-bold text-3xl md:text-5xl text-white uppercase tracking-tighter">The Founder's Vision</h2>
+                        <div className="w-16 h-px bg-white/20" />
+                        <p className="text-gray-muted/80 font-light text-lg md:text-xl leading-relaxed text-balance">
                             Founded by Aashish Jajoo, Kichen Kumfurt was born from a singular obsession: to merge flawless architectural aesthetics with everyday functionality.
                         </p>
-                        <p className="text-gray-muted text-base md:text-lg leading-relaxed">
+                        <p className="text-gray-muted/80 font-light text-lg md:text-xl leading-relaxed text-balance">
                             We believe that a kitchen is not merely a utility space, but the very soul of a home. It demands the same level of architectural rigor and material quality as a luxury estate. 
                         </p>
-                        <div className="bg-dark-gray/30 p-6 md:p-8 border-l border-primary-red mt-6 md:mt-8">
-                            <p className="text-white text-lg md:text-xl italic font-serif leading-relaxed">"True luxury is found in the details that others overlook. It is the silent, flawless glide of a drawer and the perfect alignment of every edge."</p>
-                            <p className="text-primary-red font-display uppercase tracking-widest text-[10px] md:text-xs mt-4 md:mt-6 font-bold">— Aashish Jajoo</p>
+                        <div className="bg-dark-gray/20 rounded-xl p-8 md:p-10 border border-white/5 relative overflow-hidden mt-10 md:mt-12">
+                            <div className="absolute top-0 left-0 w-1 h-full bg-primary-red" />
+                            <p className="text-white text-xl md:text-2xl italic font-serif leading-relaxed text-balance">"True luxury is found in the details that others overlook. It is the silent, flawless glide of a drawer and the perfect alignment of every edge."</p>
+                            <p className="text-primary-red font-display uppercase tracking-widest text-xs mt-6 md:mt-8 font-bold">— Aashish Jajoo</p>
                         </div>
                     </FadeIn>
                 </div>

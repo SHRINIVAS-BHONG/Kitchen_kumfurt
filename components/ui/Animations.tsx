@@ -24,7 +24,7 @@ export const FadeIn = ({ children, delay = 0, direction = "up", fullWidth = fals
             initial={{ opacity: 0, ...directions[direction] }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.8, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+            transition={{ duration: 1.2, delay, ease: [0.16, 1, 0.3, 1] }}
             className={`${fullWidth ? "w-full" : ""} ${className}`}
             {...props}
         >
@@ -59,8 +59,8 @@ export const StaggerItem = ({ children, className = "", ...props }: HTMLMotionPr
     return (
         <motion.div
             variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] } }
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
             }}
             className={className}
             {...props}

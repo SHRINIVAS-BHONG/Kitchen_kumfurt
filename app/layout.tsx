@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./global.css";
 
 const inter = Inter({
@@ -8,10 +8,10 @@ const inter = Inter({
     weight: ['300', '400', '500']
 });
 
-const montserrat = Montserrat({
+const playfair = Playfair_Display({
     subsets: ["latin"],
-    variable: "--font-space-grotesk", // keeping the variable name the same so we don't have to change tailwind.config.ts if it's already there
-    weight: ['400', '500', '700', '800']
+    variable: "--font-playfair-display",
+    weight: ['400', '500', '600', '700', '800']
 });
 
 export const metadata: Metadata = {
@@ -56,7 +56,9 @@ export default function RootLayout({
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
             </head>
-            <body className={`${inter.variable} ${montserrat.variable} bg-primary-black text-white font-sans antialiased min-h-screen flex flex-col`}>
+            <body className={`${inter.variable} ${playfair.variable} bg-primary-black text-white font-sans antialiased min-h-screen flex flex-col`}>
+                {/* Premium Global Noise Texture */}
+                <div className="fixed inset-0 z-[100] bg-noise pointer-events-none mix-blend-overlay" />
                 <Header />
                 <main className="flex-1">
                     {children}

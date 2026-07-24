@@ -1,107 +1,57 @@
-"use client";
-
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
 import { Button } from "@/components/ui/Button";
+import { HeroParallax } from "@/components/home/HeroParallax";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/Animations";
 import { LuxuryCard } from "@/components/ui/LuxuryCard";
 import { ChevronRight, ArrowDown } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
-    const heroRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: heroRef,
-        offset: ["start start", "end start"]
-    });
-    
-    // Parallax effects for Hero
-    const yHeroText = useTransform(scrollYProgress, [0, 1], [0, 200]);
-    const opacityHero = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
     return (
         <main className="w-full bg-primary-black overflow-hidden">
 
             {/* 1. CINEMATIC HERO SECTION */}
-            <section ref={heroRef} className="relative h-screen w-full flex flex-col items-center justify-center px-6 md:px-12 pt-20">
-                {/* Background Video/Image Placeholder */}
-                <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-primary-black z-10" />
-                    {/* Placeholder for high-res architecture photo */}
-                    <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(#333 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-                </div>
-
-                <motion.div 
-                    style={{ y: yHeroText, opacity: opacityHero }}
-                    className="relative z-20 w-full max-w-7xl text-center flex flex-col items-center px-4"
-                >
-                    <FadeIn delay={0.2} direction="up">
-                        <p className="font-sans text-gray-muted text-[9px] sm:text-xs uppercase tracking-[0.4em] font-medium mb-6 mt-16 sm:mt-0">
-                            Est. 2024 &mdash; Nanded
-                        </p>
-                    </FadeIn>
-                    
-                    <FadeIn delay={0.4} direction="up">
-                        <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-7xl lg:text-[7rem] xl:text-[8.5rem] tracking-tighter leading-tight sm:leading-[0.9] text-white uppercase mb-6 sm:mb-8 drop-shadow-2xl">
-                            Inspiring<br/>Kitchens
-                        </h1>
-                    </FadeIn>
-
-                    <FadeIn delay={0.6} direction="up">
-                        <div className="flex items-center justify-center gap-3 mb-16">
-                            <span className="text-gray-muted/80 text-sm sm:text-xl lg:text-2xl italic font-serif">by</span>
-                            <span className="text-white font-display font-bold text-sm sm:text-lg lg:text-2xl tracking-[0.2em] uppercase">Aashish</span>
-                        </div>
-                    </FadeIn>
-
-                    <FadeIn delay={0.8} direction="up">
-                        <div className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-center justify-center w-full">
-                            <Button variant="primary" className="w-full max-w-[280px] sm:w-auto h-[52px] sm:h-[56px] justify-center text-xs sm:text-sm">
-                                Schedule Consultation
-                            </Button>
-                            <Button variant="ghost" className="text-xs sm:text-sm">
-                                View Portfolio
-                            </Button>
-                        </div>
-                    </FadeIn>
-                </motion.div>
-
-
-            </section>
+            <HeroParallax />
 
             {/* 2. BRAND INTRODUCTION / LUXURY STATEMENT */}
-            <section className="py-24 md:py-48 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto border-t border-dark-gray/20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-32 items-center">
+            <section className="py-32 md:py-56 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto border-t border-white/5 relative">
+                {/* Background Glow */}
+                <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-primary-red/5 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 lg:gap-32 items-center relative z-10">
                     <FadeIn direction="right">
-                        <h2 className="font-display font-bold text-3xl md:text-5xl text-white uppercase leading-tight tracking-wide mb-8">
-                            Uncompromising <br/>
+                        <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white uppercase leading-tight tracking-tighter mb-8 md:mb-12 text-balance">
+                            Uncompromising <br />
                             <span className="text-primary-red">Craftsmanship.</span>
                         </h2>
-                        <div className="w-24 h-1 bg-dark-gray mb-8" />
-                        <p className="text-gray-muted text-base md:text-lg leading-relaxed mb-6">
+                        <div className="w-24 h-px bg-white/20 mb-8 md:mb-12" />
+                        <p className="text-gray-muted/80 font-light text-lg md:text-xl leading-relaxed mb-6 md:mb-8 text-balance">
                             Kichen Kumfurt represents the pinnacle of bespoke interior architecture. We don't just build modular setups; we engineer luxurious culinary spaces tailored precisely to your lifestyle.
                         </p>
-                        <p className="text-gray-muted text-base md:text-lg leading-relaxed mb-10">
+                        <p className="text-gray-muted/80 font-light text-lg md:text-xl leading-relaxed mb-10 md:mb-14 text-balance">
                             By sourcing the finest materials globally and applying rigorous precision engineering, every creation is a testament to durability, elegance, and modern living.
                         </p>
                         <Link href="/about" className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-white hover:text-primary-red transition-colors border-b border-white hover:border-primary-red pb-1 h-11">
                             Discover Our Story <ChevronRight className="w-4 h-4" />
                         </Link>
                     </FadeIn>
-                    
-                    <FadeIn direction="left" className="relative h-[400px] md:h-[600px] w-full bg-dark-gray/30 border border-dark-gray">
+
+                    <FadeIn direction="left" className="relative h-[500px] md:h-[700px] w-full bg-dark-gray border border-white/5 rounded-2xl overflow-hidden group">
                         {/* Placeholder for beautiful lifestyle kitchen image */}
-                        <div className="absolute inset-0 flex items-center justify-center text-gray-muted/20 font-display uppercase tracking-widest text-sm text-center px-4">
+                        <div className="absolute inset-0 opacity-20 group-hover:scale-105 transition-transform duration-[2000ms] ease-[0.16,1,0.3,1]">
+                            <div className="w-full h-full" style={{ backgroundImage: "radial-gradient(#333 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+                        </div>
+                        <div className="absolute inset-0 flex items-center justify-center text-gray-muted/20 font-display uppercase tracking-widest text-sm text-center px-4 z-10">
                             Architecture Image Placeholder
                         </div>
                         {/* Decorative element */}
-                        <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-primary-red/10 blur-3xl" />
+                        <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-primary-red/10 blur-3xl" />
                     </FadeIn>
                 </div>
             </section>
 
             {/* 3. FEATURED COLLECTIONS (GRID) */}
-            <section className="py-24 md:py-32 bg-[#111111] px-6 md:px-12 lg:px-24">
+            <section className="py-24 md:py-32 bg-dark-gray px-6 md:px-12 lg:px-24">
                 <FadeIn className="max-w-7xl mx-auto mb-16 md:mb-20 text-center">
                     <span className="font-sans text-primary-red text-xs uppercase tracking-[0.3em] font-bold mb-4 block">Collections</span>
                     <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white uppercase tracking-wider">Bespoke Living</h2>
@@ -109,7 +59,7 @@ export default function Home() {
 
                 <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     <StaggerItem>
-                        <LuxuryCard 
+                        <LuxuryCard
                             title="Luxury Kitchens"
                             description="Precision-engineered culinary spaces combining German hardware with exquisite finishes."
                             imagePlaceholder="Kitchen Project"
@@ -117,7 +67,7 @@ export default function Home() {
                         />
                     </StaggerItem>
                     <StaggerItem>
-                        <LuxuryCard 
+                        <LuxuryCard
                             title="Designer Wardrobes"
                             description="Tailored storage solutions featuring seamless gliding mechanisms and integrated lighting."
                             imagePlaceholder="Wardrobe Project"
@@ -125,7 +75,7 @@ export default function Home() {
                         />
                     </StaggerItem>
                     <StaggerItem>
-                        <LuxuryCard 
+                        <LuxuryCard
                             title="Walk-in Closets"
                             description="Expansive, organized luxury for your most prized collections and daily routines."
                             imagePlaceholder="Walk-in Closet"
@@ -133,7 +83,7 @@ export default function Home() {
                         />
                     </StaggerItem>
                     <StaggerItem>
-                        <LuxuryCard 
+                        <LuxuryCard
                             title="Custom TV Units"
                             description="Minimalist entertainment centers that hide cables and showcase design."
                             imagePlaceholder="TV Unit Project"
@@ -141,7 +91,7 @@ export default function Home() {
                         />
                     </StaggerItem>
                     <StaggerItem>
-                        <LuxuryCard 
+                        <LuxuryCard
                             title="Storage Solutions"
                             description="Intelligent space optimization hidden behind flawless architectural panels."
                             imagePlaceholder="Storage Project"
@@ -149,7 +99,7 @@ export default function Home() {
                         />
                     </StaggerItem>
                     <StaggerItem>
-                        <LuxuryCard 
+                        <LuxuryCard
                             title="Premium Materials"
                             description="Explore our library of Quartz, Acrylic, PU, and Natural Woods."
                             imagePlaceholder="Materials Showcase"
@@ -160,10 +110,11 @@ export default function Home() {
             </section>
 
             {/* 4. THE CONSULTATION PROCESS (Minimal Timeline) */}
-            <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-dark-gray/20">
-                <div className="max-w-7xl mx-auto">
+            <section className="py-12 md:py-20 px-6 md:px-12 lg:px-24 border-t border-white/5 relative">
+                <div className="absolute top-0 left-1/2 w-[800px] h-[500px] bg-primary-red/5 rounded-full blur-[150px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+                <div className="max-w-[1400px] mx-auto relative z-10">
                     <FadeIn>
-                        <h2 className="font-display font-bold text-3xl md:text-5xl text-white uppercase tracking-wider mb-16 md:mb-20">The Journey to <br/><span className="text-primary-red text-3xl md:text-6xl">Perfection</span></h2>
+                        <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-white uppercase tracking-tighter mb-20 md:mb-32 text-balance">The Journey to <br /><span className="text-primary-red">Perfection</span></h2>
                     </FadeIn>
 
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
@@ -173,11 +124,11 @@ export default function Home() {
                             { step: "03", title: "Engineering", desc: "Manufacturing with millimeter precision in our facility." },
                             { step: "04", title: "Installation", desc: "Flawless execution by our master craftsmen." }
                         ].map((item, idx) => (
-                            <FadeIn key={idx} delay={idx * 0.2} className="relative group">
-                                <div className="text-4xl md:text-5xl font-display font-bold text-dark-gray mb-4 md:mb-6 group-hover:text-primary-red transition-colors duration-500">{item.step}</div>
-                                <h3 className="text-lg md:text-xl text-white font-display uppercase tracking-wide mb-3 md:mb-4">{item.title}</h3>
-                                <p className="text-gray-muted text-sm leading-relaxed">{item.desc}</p>
-                                {idx !== 3 && <div className="hidden lg:block absolute top-8 -right-6 w-12 h-px bg-dark-gray" />}
+                            <FadeIn key={idx} delay={idx * 0.2} className="relative group cursor-pointer">
+                                <div className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white/20 mb-6 md:mb-8 group-hover:text-primary-red group-hover:opacity-100 group-active:text-primary-red group-active:opacity-100 transition-all duration-700">{item.step}</div>
+                                <h3 className="text-xl md:text-2xl text-white font-display uppercase tracking-wide mb-3 md:mb-4">{item.title}</h3>
+                                <p className="text-gray-muted/80 font-light text-sm md:text-base leading-relaxed max-w-sm">{item.desc}</p>
+                                {idx !== 3 && <div className="hidden lg:block absolute top-12 -right-6 w-12 h-px bg-white/10" />}
                             </FadeIn>
                         ))}
                     </div>
@@ -185,18 +136,20 @@ export default function Home() {
             </section>
 
             {/* 5. CTA / FINAL STATEMENT */}
-            <section className="relative py-32 md:py-48 flex items-center justify-center bg-black overflow-hidden border-t border-dark-gray px-6">
+            <section className="relative py-12 md:py-20 flex items-center justify-center bg-primary-black overflow-hidden border-t border-white/5 px-6">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-primary-red/10 mix-blend-overlay" />
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
+                    <div className="absolute inset-0 bg-primary-red/5 mix-blend-overlay" />
+                    <div className="absolute inset-0 bg-[url(https://www.transparenttextures.com/patterns/cubes.png)] opacity-[0.03]" />
                 </div>
-                
+
                 <FadeIn className="relative z-10 text-center max-w-4xl">
-                    <h2 className="font-display font-bold text-3xl md:text-6xl text-white uppercase tracking-tighter mb-8 md:mb-10">Ready to Elevate Your Space?</h2>
-                    <p className="text-gray-muted text-base md:text-lg mb-10 md:mb-12">Schedule a private consultation with our principal designer, Aashish Jajoo.</p>
-                    <Button variant="primary" className="mx-auto bg-white text-primary-black hover:bg-gray-muted border border-white h-12">
-                        Contact Us Today
-                    </Button>
+                    <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-white uppercase tracking-tighter mb-8 md:mb-10 text-balance">Ready to Elevate Your Space?</h2>
+                    <p className="text-gray-muted/80 font-light text-lg md:text-2xl mb-12 md:mb-16 text-balance">Schedule a private consultation with our principal designer, Aashish Jajoo.</p>
+                    <Link href="/contact" className="flex justify-center">
+                        <Button variant="primary" className="bg-white !text-primary-black hover:bg-gray-muted border border-white h-[56px] text-sm">
+                            Contact Us Today
+                        </Button>
+                    </Link>
                 </FadeIn>
             </section>
 

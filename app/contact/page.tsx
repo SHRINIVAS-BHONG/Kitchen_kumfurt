@@ -6,12 +6,14 @@ import { MapPin, Phone, Mail, Instagram, Facebook, Clock } from "lucide-react";
 
 export default function ContactPage() {
     return (
-        <main className="pt-24 md:pt-32 pb-0 bg-primary-black min-h-screen flex flex-col">
-            <div className="container mx-auto px-6 md:px-12 lg:px-24 max-w-7xl flex-grow">
+        <main className="pt-32 md:pt-48 pb-0 bg-primary-black min-h-screen flex flex-col relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-red/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+
+            <div className="container mx-auto px-6 md:px-12 lg:px-24 max-w-[1400px] flex-grow relative z-10">
                 
-                <FadeIn className="mb-12 md:mb-16">
-                    <h1 className="font-display font-bold text-3xl md:text-6xl text-white uppercase tracking-wider mb-4 md:mb-6 mt-4 md:mt-0">Start a Conversation</h1>
-                    <p className="text-gray-muted text-base md:text-lg max-w-2xl">
+                <FadeIn className="mb-16 md:mb-24">
+                    <h1 className="font-display font-bold text-4xl md:text-7xl lg:text-[7rem] text-white uppercase tracking-tighter leading-[0.9] mb-6 md:mb-8 mt-4 md:mt-0 text-balance">Start a Conversation</h1>
+                    <p className="text-gray-muted/80 font-light text-lg md:text-xl max-w-3xl leading-relaxed text-balance">
                         Schedule a private consultation at our design studio. Let's discuss your vision and how Kichen Kumfurt can bring it to life.
                     </p>
                 </FadeIn>
@@ -20,26 +22,26 @@ export default function ContactPage() {
                     
                     {/* Contact Form */}
                     <FadeIn delay={0.2} className="lg:col-span-7">
-                        <div className="bg-[#111] p-6 md:p-12 border border-dark-gray">
-                            <h2 className="font-display text-xl md:text-2xl text-white uppercase tracking-wide mb-6 md:mb-8">Inquiry Form</h2>
-                            <form className="space-y-8">
+                        <div className="bg-[#0a0a0a] rounded-2xl border border-white/5 p-8 md:p-14 shadow-2xl">
+                            <h2 className="font-display text-2xl md:text-3xl text-white uppercase tracking-wide mb-8 md:mb-12">Inquiry Form</h2>
+                            <form className="space-y-10">
                                 <div className="grid grid-cols-2 gap-4 md:gap-8">
                                     <div className="flex flex-col gap-1">
                                         <label className="text-[10px] uppercase tracking-widest text-gray-muted/70 font-bold mb-1">First Name</label>
-                                        <input type="text" className="w-full bg-transparent border-b border-dark-gray py-2 text-white focus:outline-none focus:border-primary-red transition-colors" />
+                                        <input type="text" className="w-full bg-dark-gray border-b border-dark-gray/50 px-4 py-3 text-white focus:outline-none focus:border-primary-red transition-colors rounded-t-md" />
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <label className="text-[10px] uppercase tracking-widest text-gray-muted/70 font-bold mb-1">Last Name</label>
-                                        <input type="text" className="w-full bg-transparent border-b border-dark-gray py-2 text-white focus:outline-none focus:border-primary-red transition-colors" />
+                                        <input type="text" className="w-full bg-dark-gray border-b border-dark-gray/50 px-4 py-3 text-white focus:outline-none focus:border-primary-red transition-colors rounded-t-md" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <label className="text-[10px] uppercase tracking-widest text-gray-muted/70 font-bold mb-1">Email Address</label>
-                                    <input type="email" className="w-full bg-transparent border-b border-dark-gray py-2 text-white focus:outline-none focus:border-primary-red transition-colors" />
+                                    <input type="email" className="w-full bg-dark-gray border-b border-dark-gray/50 px-4 py-3 text-white focus:outline-none focus:border-primary-red transition-colors rounded-t-md" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <label className="text-[10px] uppercase tracking-widest text-gray-muted/70 font-bold mb-1">Phone Number</label>
-                                    <input type="tel" className="w-full bg-transparent border-b border-dark-gray py-2 text-white focus:outline-none focus:border-primary-red transition-colors" />
+                                    <input type="tel" className="w-full bg-dark-gray border-b border-dark-gray/50 px-4 py-3 text-white focus:outline-none focus:border-primary-red transition-colors rounded-t-md" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <label className="text-[10px] uppercase tracking-widest text-gray-muted/70 font-bold mb-1">Project Details</label>
@@ -50,10 +52,10 @@ export default function ContactPage() {
                                             target.style.height = 'auto';
                                             target.style.height = `${target.scrollHeight}px`;
                                         }}
-                                        className="w-full bg-transparent border-b border-dark-gray py-2 text-white focus:outline-none focus:border-primary-red transition-colors resize-none overflow-hidden" 
+                                        className="w-full bg-dark-gray border-b border-dark-gray/50 px-4 py-3 text-white focus:outline-none focus:border-primary-red transition-colors resize-none overflow-hidden rounded-t-md" 
                                     />
                                 </div>
-                                <Button variant="primary" className="mt-8 w-full md:w-auto h-12">
+                                <Button variant="primary" className="mt-12 w-full md:w-auto h-14">
                                     Submit Inquiry
                                 </Button>
                             </form>
@@ -61,25 +63,25 @@ export default function ContactPage() {
                     </FadeIn>
 
                     {/* Contact Details */}
-                    <FadeIn delay={0.4} direction="left" className="lg:col-span-5 space-y-12 mt-8 lg:mt-0">
+                    <FadeIn delay={0.4} direction="left" className="lg:col-span-5 space-y-16 mt-12 lg:mt-0 lg:pl-12">
                         <div>
-                            <h3 className="font-display text-lg md:text-xl text-white uppercase tracking-wide mb-6">The Studio</h3>
-                            <ul className="space-y-6">
-                                <li className="flex items-start gap-4 text-gray-muted">
+                            <h3 className="font-display text-xl md:text-2xl text-white uppercase tracking-wide mb-8">The Studio</h3>
+                            <ul className="space-y-8">
+                                <li className="flex items-start gap-5 text-gray-muted/80">
                                     <MapPin className="w-5 h-5 text-primary-red shrink-0 mt-1" />
-                                    <span className="leading-relaxed text-sm">
+                                    <span className="leading-relaxed text-base font-light">
                                         2nd Floor, Sanman Prestige,<br />
                                         Railway Station Road,<br />
                                         Nanded - 431601
                                     </span>
                                 </li>
-                                <li className="flex items-center gap-4 text-gray-muted">
+                                <li className="flex items-center gap-5 text-gray-muted/80">
                                     <Phone className="w-5 h-5 text-primary-red shrink-0" />
-                                    <span className="text-sm">+91 7020171895</span>
+                                    <span className="text-base font-light">+91 7020171895</span>
                                 </li>
-                                <li className="flex items-center gap-4 text-gray-muted">
+                                <li className="flex items-center gap-5 text-gray-muted/80">
                                     <Mail className="w-5 h-5 text-primary-red shrink-0" />
-                                    <span className="text-sm">kichenkumfurt@gmail.com</span>
+                                    <span className="text-base font-light">kichenkumfurt@gmail.com</span>
                                 </li>
                             </ul>
                         </div>
@@ -98,12 +100,12 @@ export default function ContactPage() {
                         </div>
 
                         <div>
-                            <h3 className="font-display text-lg md:text-xl text-white uppercase tracking-wide mb-6">Connect</h3>
+                            <h3 className="font-display text-xl md:text-2xl text-white uppercase tracking-wide mb-8">Connect</h3>
                             <div className="flex gap-4">
-                                <a href="#" className="w-12 h-12 rounded-full border border-dark-gray flex items-center justify-center text-gray-muted hover:bg-primary-red hover:text-white hover:border-primary-red transition-colors">
+                                <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-muted hover:bg-primary-red hover:text-white hover:border-primary-red transition-all duration-500 ease-[0.16,1,0.3,1] shadow-lg hover:scale-105 hover:-translate-y-1">
                                     <Instagram className="w-5 h-5" />
                                 </a>
-                                <a href="#" className="w-12 h-12 rounded-full border border-dark-gray flex items-center justify-center text-gray-muted hover:bg-primary-red hover:text-white hover:border-primary-red transition-colors">
+                                <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-muted hover:bg-primary-red hover:text-white hover:border-primary-red transition-all duration-500 ease-[0.16,1,0.3,1] shadow-lg hover:scale-105 hover:-translate-y-1">
                                     <Facebook className="w-5 h-5" />
                                 </a>
                             </div>
