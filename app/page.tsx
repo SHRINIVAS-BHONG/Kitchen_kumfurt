@@ -37,13 +37,12 @@ export default function Home() {
                     </FadeIn>
 
                     <FadeIn direction="left" className="relative h-[500px] md:h-[700px] w-full bg-dark-gray border border-white/5 rounded-2xl overflow-hidden group">
-                        {/* Placeholder for beautiful lifestyle kitchen image */}
-                        <div className="absolute inset-0 opacity-20 group-hover:scale-105 transition-transform duration-[2000ms] ease-[0.16,1,0.3,1]">
-                            <div className="w-full h-full" style={{ backgroundImage: "radial-gradient(#333 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
-                        </div>
-                        <div className="absolute inset-0 flex items-center justify-center text-gray-muted/20 font-display uppercase tracking-widest text-sm text-center px-4 z-10">
-                            Architecture Image Placeholder
-                        </div>
+                        <img 
+                            src="/images/craftsmanship.jpg" 
+                            alt="Uncompromising Craftsmanship - Premium Kitchen Details" 
+                            className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-[2000ms] ease-[0.16,1,0.3,1]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-black/80 via-transparent to-transparent pointer-events-none" />
                         {/* Decorative element */}
                         <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-primary-red/10 blur-3xl" />
                     </FadeIn>
@@ -62,7 +61,7 @@ export default function Home() {
                         <LuxuryCard
                             title="Luxury Kitchens"
                             description="Precision-engineered culinary spaces combining German hardware with exquisite finishes."
-                            imagePlaceholder="Kitchen Project"
+                            imageUrl="/images/luxury-kitchen.jpg"
                             href="/kitchens"
                         />
                     </StaggerItem>

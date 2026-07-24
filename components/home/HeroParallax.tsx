@@ -37,19 +37,12 @@ export const HeroParallax = () => {
                 </FadeIn>
 
                 <FadeIn delay={0.4} direction="up">
-                    <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-7xl lg:text-[7.5rem] xl:text-[9rem] tracking-tighter leading-[0.85] text-white uppercase mb-6 sm:mb-8 drop-shadow-2xl">
+                    <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-7xl lg:text-[7.5rem] xl:text-[9rem] tracking-tighter leading-[0.85] text-white uppercase mb-12 sm:mb-16 drop-shadow-2xl">
                         Inspiring<br />Kitchens
                     </h1>
                 </FadeIn>
 
                 <FadeIn delay={0.6} direction="up">
-                    <div className="flex items-center justify-center gap-3 mb-16">
-                        <span className="text-gray-muted/80 text-sm sm:text-xl lg:text-2xl italic font-serif">by</span>
-                        <span className="text-white font-display font-bold text-sm sm:text-lg lg:text-2xl tracking-[0.2em] uppercase">Aashish</span>
-                    </div>
-                </FadeIn>
-
-                <FadeIn delay={0.8} direction="up">
                     <div className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-center justify-center w-full">
                         <Link href="/contact" className="w-full max-w-[280px] sm:w-auto">
                             <Button variant="primary" className="w-full h-[52px] sm:h-[56px] justify-center text-xs sm:text-sm">
