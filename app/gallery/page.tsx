@@ -19,19 +19,21 @@ export default function GalleryPage() {
                 </FadeIn>
 
                 <StaggerContainer className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-                    {Array.from({ length: 9 }).map((_, i) => (
+                    {[
+                        "/images/villa-aurora.jpg",
+                        "/images/glass-house.jpg",
+                        "/images/custom-tv-units.jpg",
+                        "/images/urban-loft.jpg",
+                        "/images/estate-alpha.jpg",
+                        "/images/luxury-kitchen.jpg",
+                        "/images/designer-wardrobes.jpg",
+                        "/images/residence-02.jpg",
+                        "/images/walk-in-closets.jpg"
+                    ].map((imgSrc, i) => (
                         <StaggerItem key={i} className="break-inside-avoid">
                             <div className={`relative w-full ${heights[i % heights.length]} bg-[#0a0a0a] rounded-2xl border border-white/5 overflow-hidden group cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-700 ease-[0.16,1,0.3,1]`}>
-                                {/* Image Placeholder */}
-                                <div className="absolute inset-0 opacity-20 group-hover:scale-110 transition-transform duration-[2000ms] ease-[0.16,1,0.3,1]">
-                                    <div className="w-full h-full" style={{ backgroundImage: "radial-gradient(#444 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
-                                </div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <span className="text-gray-muted/40 font-display uppercase tracking-widest text-[10px] md:text-xs font-bold">Image {i + 1}</span>
-                                </div>
-
+                                <img src={imgSrc} alt={`Gallery Image ${i + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms] ease-[0.16,1,0.3,1]" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                             </div>
                         </StaggerItem>
                     ))}
