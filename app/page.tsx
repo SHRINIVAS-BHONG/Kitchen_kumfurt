@@ -69,7 +69,7 @@ export default function Home() {
                         <LuxuryCard
                             title="Designer Wardrobes"
                             description="Tailored storage solutions featuring seamless gliding mechanisms and integrated lighting."
-                            imagePlaceholder="Wardrobe Project"
+                            imageUrl="/images/designer-wardrobes.jpg"
                             href="/wardrobes"
                         />
                     </StaggerItem>
@@ -77,7 +77,7 @@ export default function Home() {
                         <LuxuryCard
                             title="Walk-in Closets"
                             description="Expansive, organized luxury for your most prized collections and daily routines."
-                            imagePlaceholder="Walk-in Closet"
+                            imageUrl="/images/walk-in-closets.jpg"
                             href="/walk-in-closets"
                         />
                     </StaggerItem>
@@ -85,7 +85,7 @@ export default function Home() {
                         <LuxuryCard
                             title="Custom TV Units"
                             description="Minimalist entertainment centers that hide cables and showcase design."
-                            imagePlaceholder="TV Unit Project"
+                            imageUrl="/images/custom-tv-units.jpg"
                             href="/tv-units"
                         />
                     </StaggerItem>
@@ -93,7 +93,7 @@ export default function Home() {
                         <LuxuryCard
                             title="Storage Solutions"
                             description="Intelligent space optimization hidden behind flawless architectural panels."
-                            imagePlaceholder="Storage Project"
+                            imageUrl="/images/storage-solutions.jpg"
                             href="/storage"
                         />
                     </StaggerItem>
@@ -101,7 +101,7 @@ export default function Home() {
                         <LuxuryCard
                             title="Premium Materials"
                             description="Explore our library of Quartz, Acrylic, PU, and Natural Woods."
-                            imagePlaceholder="Materials Showcase"
+                            imageUrl="/images/premium-materials.jpg"
                             href="/materials"
                         />
                     </StaggerItem>

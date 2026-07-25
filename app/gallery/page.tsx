@@ -3,8 +3,8 @@
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/Animations";
 
 export default function GalleryPage() {
-    // Array of heights to create a masonry-like staggered grid look
-    const heights = ["h-[400px]", "h-[600px]", "h-[500px]", "h-[700px]", "h-[450px]", "h-[550px]"];
+    // Array of heights to create a masonry-like staggered grid look, scaled down for mobile screens
+    const heights = ["h-64 md:h-[400px]", "h-80 md:h-[600px]", "h-72 md:h-[500px]", "h-96 md:h-[700px]", "h-60 md:h-[450px]", "h-[22rem] md:h-[550px]"];
 
     return (
         <main className="pt-32 md:pt-48 pb-24 md:pb-40 bg-primary-black min-h-screen relative overflow-hidden">

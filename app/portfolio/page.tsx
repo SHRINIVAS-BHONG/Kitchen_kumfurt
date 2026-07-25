@@ -8,9 +8,9 @@ export default function PortfolioPage() {
     const [activeFilter, setActiveFilter] = useState("All Projects");
 
     const projects = [
-        { title: "Villa Aurora", desc: "A modern monolithic kitchen featuring matte black PU and engineered quartz.", category: "Kitchens" },
-        { title: "The Glass House", desc: "Expansive walk-in closet with tinted glass profiles and integrated LED lighting.", category: "Wardrobes" },
-        { title: "Penthouse 94", desc: "Minimalist living room TV unit with hidden storage and acoustic paneling.", category: "Living Spaces" },
+        { title: "Villa Aurora", desc: "A modern monolithic kitchen featuring matte black PU and engineered quartz.", category: "Kitchens", imageUrl: "/images/villa-aurora.jpg" },
+        { title: "The Glass House", desc: "Expansive walk-in closet with tinted glass profiles and integrated LED lighting.", category: "Wardrobes", imageUrl: "/images/glass-house.jpg" },
+        { title: "Penthouse 94", desc: "Minimalist living room TV unit with hidden storage and acoustic paneling.", category: "Living Spaces", imageUrl: "/images/custom-tv-units.jpg" },
         { title: "Estate Alpha", desc: "A classical fusion kitchen using natural oak veneers and brass hardware.", category: "Kitchens" },
         { title: "Urban Loft", desc: "Smart storage solutions tailored for compact, high-end city living.", category: "Living Spaces" },
         { title: "Residence 02", desc: "Floor-to-ceiling sliding wardrobes with acrylic solid surfaces.", category: "Wardrobes" },
@@ -59,6 +59,7 @@ export default function PortfolioPage() {
                             <LuxuryCard 
                                 title={project.title}
                                 description={project.desc}
+                                imageUrl={(project as any).imageUrl}
                                 imagePlaceholder={`${project.category} Photography`}
                                 className="h-full"
                             />

@@ -72,10 +72,7 @@ export const Header = () => {
 
                     {/* Contact & CTA & Hamburger */}
                     <div className="flex items-center gap-6 relative z-50">
-                        <div className={`hidden md:flex items-center gap-2 text-gray-muted hover:text-white transition-colors cursor-pointer ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                            <Phone className="w-4 h-4 text-primary-red" />
-                            <span className="text-sm font-medium tracking-wide">+91 7020171895</span>
-                        </div>
+
                         <Link href="/contact" className={`hidden sm:flex transition-opacity duration-300 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} onClick={() => setMenuOpen(false)}>
                             <Button variant="primary" className="shadow-lg shadow-primary-red/20 py-3 px-6">
                                 Consultation

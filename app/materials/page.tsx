@@ -7,27 +7,27 @@ export default function MaterialsPage() {
         {
             category: "Surfaces & Finishes",
             items: [
-                { title: "High-Gloss PU", desc: "Polyurethane finishes offering an ultra-premium, mirror-like gloss that resists scratches and moisture." },
-                { title: "Premium Laminates", desc: "Textured and matte European laminates that provide immense durability and a warm, tactile feel." },
-                { title: "Acrylic Solid", desc: "Seamless, non-porous surfaces that deliver deep, rich colors and incredible hygiene standards." },
-                { title: "Natural Wood Veneers", desc: "Ethically sourced woods that bring organic luxury and unique grain patterns to your architectural space." },
-                { title: "Toughened Glass", desc: "Profile doors and backsplashes utilizing back-painted or tinted glass for a sleek, modern aesthetic." }
+                { title: "High-Gloss PU", desc: "Polyurethane finishes offering an ultra-premium, mirror-like gloss that resists scratches and moisture.", image: "/images/high-gloss-pu.jpg" },
+                { title: "Premium Laminates", desc: "Textured and matte European laminates that provide immense durability and a warm, tactile feel.", image: "/images/premium-materials.jpg" },
+                { title: "Acrylic Solid", desc: "Seamless, non-porous surfaces that deliver deep, rich colors and incredible hygiene standards.", image: "/images/acrylic-solid.jpg" },
+                { title: "Natural Wood Veneers", desc: "Ethically sourced woods that bring organic luxury and unique grain patterns to your architectural space.", image: "/images/wood-veneers.jpg" },
+                { title: "Toughened Glass", desc: "Profile doors and backsplashes utilizing back-painted or tinted glass for a sleek, modern aesthetic.", image: "/images/toughened-glass.jpg" }
             ]
         },
         {
             category: "Countertops",
             items: [
-                { title: "Engineered Quartz", desc: "Extremely durable, non-porous surfaces resisting stains and heat, available in marble-like veining." },
-                { title: "Solid Surface (Corian)", desc: "Seamless integrations that allow for invisible joints and integrated sinks." },
-                { title: "Granite", desc: "Classic natural stone offering unparalleled hardness and unique earthy tones." }
+                { title: "Engineered Quartz", desc: "Extremely durable, non-porous surfaces resisting stains and heat, available in marble-like veining.", image: "/images/engineered-quartz.jpg" },
+                { title: "Solid Surface (Corian)", desc: "Seamless integrations that allow for invisible joints and integrated sinks.", image: "/images/solid-surface.jpg" },
+                { title: "Granite", desc: "Classic natural stone offering unparalleled hardness and unique earthy tones.", image: "/images/granite.jpg" }
             ]
         },
         {
             category: "Hardware & Mechanisms",
             items: [
-                { title: "Hettich (Germany)", desc: "Precision drawer systems and soft-close hinges engineered for millions of flawless cycles." },
-                { title: "Blum (Austria)", desc: "Advanced lift systems for overhead cabinets and seamless push-to-open mechanisms." },
-                { title: "Hafele", desc: "Premium organizational accessories, from corner carousels to integrated LED lighting solutions." }
+                { title: "Hettich (Germany)", desc: "Precision drawer systems and soft-close hinges engineered for millions of flawless cycles.", image: "/images/hettich.jpg" },
+                { title: "Blum (Austria)", desc: "Advanced lift systems for overhead cabinets and seamless push-to-open mechanisms.", image: "/images/blum.jpg" },
+                { title: "Hafele", desc: "Premium organizational accessories, from corner carousels to integrated LED lighting solutions.", image: "/images/hafele.jpg" }
             ]
         }
     ];
@@ -61,10 +61,14 @@ export default function MaterialsPage() {
                                 {section.items.map((item, i) => (
                                     <StaggerItem key={i}>
                                         <div className="group bg-[#0a0a0a] rounded-2xl border border-white/5 p-8 md:p-10 h-full hover:border-primary-red/30 hover:bg-[#111] hover:-translate-y-1 transition-all duration-700 ease-[0.16,1,0.3,1] shadow-xl hover:shadow-2xl">
-                                            {/* Placeholder for material texture image */}
+                                            {/* Material texture image or Placeholder */}
                                             <div className="w-full h-40 md:h-48 bg-dark-gray/20 rounded-xl mb-8 overflow-hidden relative">
                                                 <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent z-10" />
-                                                <div className="absolute inset-0 opacity-10 group-hover:scale-110 transition-transform duration-[1500ms] ease-[0.16,1,0.3,1]" style={{ backgroundImage: "radial-gradient(#555 1px, transparent 1px)", backgroundSize: "10px 10px" }} />
+                                                {item.image ? (
+                                                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms] ease-[0.16,1,0.3,1]" />
+                                                ) : (
+                                                    <div className="absolute inset-0 opacity-10 group-hover:scale-110 transition-transform duration-[1500ms] ease-[0.16,1,0.3,1]" style={{ backgroundImage: "radial-gradient(#555 1px, transparent 1px)", backgroundSize: "10px 10px" }} />
+                                                )}
                                             </div>
                                             
                                             <h3 className="text-xl md:text-2xl text-white font-display uppercase tracking-wide mb-4">{item.title}</h3>
