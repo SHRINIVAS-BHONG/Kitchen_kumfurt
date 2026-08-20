@@ -14,9 +14,15 @@ export default function PortfolioPage() {
         { title: "Estate Alpha", desc: "A classical fusion kitchen using natural oak veneers and brass hardware.", category: "Kitchens", imageUrl: "/images/estate-alpha.jpg" },
         { title: "Urban Loft", desc: "Smart storage solutions tailored for compact, high-end city living.", category: "Living Spaces", imageUrl: "/images/urban-loft.jpg" },
         { title: "Residence 02", desc: "Floor-to-ceiling sliding wardrobes with acrylic solid surfaces.", category: "Wardrobes", imageUrl: "/images/residence-02.jpg" },
+        { title: "Lumina Master Suite", desc: "Integrated modular bed and matching dresser set with floating nightstands.", category: "Modular Furniture", imageUrl: "/images/modular_bed.jpg" },
+        { title: "Cloud Nine Sofa", desc: "Custom modular sofa in ultra-premium boucle fabric for a modern minimalist living space.", category: "Modular Furniture", imageUrl: "/images/modern_sofa.jpg" },
+        { title: "Oasis Spa", desc: "Frameless glass bathroom cubicals with matte black fixtures and slate tiles.", category: "Bathroom Cubicals", imageUrl: "/images/frameless_shower.jpg" },
+        { title: "The Sanctuary", desc: "Spa-like bathroom retreat with frosted glass and brass detailing over natural stone.", category: "Bathroom Cubicals", imageUrl: "/images/spa_bathroom.jpg" },
+        { title: "The Divider", desc: "Custom slatted wood room partition defining the dining and living spaces seamlessly.", category: "Room Partitions", imageUrl: "/images/slatted_wood_partition.jpg" },
+        { title: "Industrial Loft Glass", desc: "Black metal and fluted glass partitions creating a sleek, dedicated home office.", category: "Room Partitions", imageUrl: "/images/metal_glass_partition.jpg" }
     ];
 
-    const filters = ["All Projects", "Kitchens", "Wardrobes", "Living Spaces"];
+    const filters = ["All Projects", "Kitchens", "Wardrobes", "Living Spaces", "Modular Furniture", "Room Partitions", "Bathroom Cubicals"];
 
     const filteredProjects = activeFilter === "All Projects" 
         ? projects 
@@ -42,7 +48,7 @@ export default function PortfolioPage() {
                         <button 
                             key={i} 
                             onClick={() => setActiveFilter(filter)}
-                            className={`text-xs uppercase tracking-widest font-bold px-5 py-3 rounded-full transition-all duration-500 ease-[0.16,1,0.3,1] cursor-pointer ${
+                            className={`text-[10px] md:text-xs uppercase tracking-wider md:tracking-widest font-bold px-3 md:px-5 py-2 md:py-3 rounded-full transition-all duration-500 ease-[0.16,1,0.3,1] cursor-pointer whitespace-nowrap ${
                                 activeFilter === filter 
                                     ? 'bg-primary-red text-white border border-primary-red shadow-[0_0_20px_rgba(211,30,39,0.3)]' 
                                     : 'text-gray-muted hover:text-white border border-dark-gray/50 hover:border-white/20 bg-dark-gray/10'

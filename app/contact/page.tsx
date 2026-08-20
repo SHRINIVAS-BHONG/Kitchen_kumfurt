@@ -77,7 +77,7 @@ export default function ContactPage() {
                                 </li>
                                 <li className="flex items-center gap-5 text-gray-muted/80">
                                     <Phone className="w-5 h-5 text-primary-red shrink-0" />
-                                    <span className="text-base font-light">+91 7020171895</span>
+                                    <span className="text-base font-light">+91 8888030786 / 7020171895</span>
                                 </li>
                                 <li className="flex items-center gap-5 text-gray-muted/80">
                                     <Mail className="w-5 h-5 text-primary-red shrink-0" />
