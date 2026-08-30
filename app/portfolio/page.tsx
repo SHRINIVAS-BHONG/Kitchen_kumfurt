@@ -13,7 +13,7 @@ export default function PortfolioPage() {
         { title: "Penthouse 94", desc: "Minimalist living room TV unit with hidden storage and acoustic paneling.", category: "Living Spaces", imageUrl: "/images/penthouse-94.jpg" },
         { title: "Estate Alpha", desc: "A classical fusion kitchen using natural oak veneers and brass hardware.", category: "Kitchens", imageUrl: "/images/estate-alpha.jpg" },
         { title: "Urban Loft", desc: "Smart storage solutions tailored for compact, high-end city living.", category: "Living Spaces", imageUrl: "/images/urban-loft.jpg" },
-        { title: "Residence 02", desc: "Floor-to-ceiling sliding wardrobes with acrylic solid surfaces.", category: "Wardrobes", imageUrl: "/images/residence-02.jpg" },
+        { title: "Residence 02", desc: "Floor-to-ceiling sliding wardrobes with high-gloss acrylic surfaces.", category: "Wardrobes", imageUrl: "/images/residence-02.jpg" },
         { title: "Lumina Master Suite", desc: "Integrated modular bed and matching dresser set with floating nightstands.", category: "Modular Furniture", imageUrl: "/images/modular_bed.jpg" },
         { title: "Cloud Nine Sofa", desc: "Custom modular sofa in ultra-premium boucle fabric for a modern minimalist living space.", category: "Modular Furniture", imageUrl: "/images/modern_sofa.jpg" },
         { title: "Oasis Spa", desc: "Frameless glass bathroom cubicals with matte black fixtures and slate tiles.", category: "Bathroom Cubicals", imageUrl: "/images/frameless_shower.jpg" },
