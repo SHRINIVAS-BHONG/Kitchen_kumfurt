@@ -20,28 +20,22 @@ export default function AboutPage() {
                 </FadeIn>
 
                 {/* Founder Vision */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center mb-24 md:mb-48">
-                    <FadeIn direction="right" className="relative h-[500px] md:h-[800px] bg-[#0a0a0a] border border-white/5 rounded-2xl flex items-center justify-center overflow-hidden group">
-                        <div className="absolute inset-0 opacity-20 group-hover:scale-110 transition-transform duration-[2000ms] ease-[0.16,1,0.3,1]">
-                            <div className="w-full h-full" style={{ backgroundImage: "radial-gradient(#333 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+                <div className="max-w-4xl mx-auto mb-24 md:mb-48">
+                    <FadeIn className="space-y-8 md:space-y-10">
+                        <div className="space-y-4">
+                            <h2 className="font-display font-bold text-3xl md:text-5xl lg:text-6xl text-white uppercase tracking-tighter">The Founder's Vision</h2>
+                            <div className="w-16 h-px bg-primary-red" />
                         </div>
-                        <div className="text-gray-muted/20 font-display uppercase tracking-widest text-sm relative z-10">Portrait Placeholder</div>
-                        <div className="absolute -bottom-20 -right-20 w-64 md:w-96 h-64 md:h-96 bg-primary-red/10 blur-[100px]" />
-                    </FadeIn>
-                    
-                    <FadeIn direction="left" className="space-y-8 md:space-y-10">
-                        <h2 className="font-display font-bold text-3xl md:text-5xl text-white uppercase tracking-tighter">The Founder's Vision</h2>
-                        <div className="w-16 h-px bg-white/20" />
-                        <p className="text-gray-muted/80 font-light text-lg md:text-xl leading-relaxed text-balance">
+                        <p className="text-gray-muted/80 font-light text-lg md:text-2xl leading-relaxed text-balance">
                             Founded by Aashish Jajoo, Kichen Kumfurt was born from a singular obsession: to merge flawless architectural aesthetics with everyday functionality.
                         </p>
-                        <p className="text-gray-muted/80 font-light text-lg md:text-xl leading-relaxed text-balance">
+                        <p className="text-gray-muted/80 font-light text-lg md:text-2xl leading-relaxed text-balance">
                             We believe that a kitchen is not merely a utility space, but the very soul of a home. It demands the same level of architectural rigor and material quality as a luxury estate. 
                         </p>
-                        <div className="bg-dark-gray/20 rounded-xl p-8 md:p-10 border border-white/5 relative overflow-hidden mt-10 md:mt-12">
-                            <div className="absolute top-0 left-0 w-1 h-full bg-primary-red" />
-                            <p className="text-white text-xl md:text-2xl italic font-serif leading-relaxed text-balance">"True luxury is found in the details that others overlook. It is the silent, flawless glide of a drawer and the perfect alignment of every edge."</p>
-                            <p className="text-primary-red font-display uppercase tracking-widest text-xs mt-6 md:mt-8 font-bold">— Aashish Jajoo</p>
+                        <div className="bg-dark-gray/30 rounded-2xl p-8 md:p-12 border border-white/5 relative overflow-hidden mt-10 md:mt-14 shadow-2xl">
+                            <div className="absolute top-0 left-0 w-1.5 h-full bg-primary-red" />
+                            <p className="text-white text-xl md:text-3xl italic font-serif leading-relaxed text-balance">"True luxury is found in the details that others overlook. It is the silent, flawless glide of a drawer and the perfect alignment of every edge."</p>
+                            <p className="text-primary-red font-display uppercase tracking-widest text-xs md:text-sm mt-6 md:mt-8 font-bold">— Aashish Jajoo</p>
                         </div>
                     </FadeIn>
                 </div>

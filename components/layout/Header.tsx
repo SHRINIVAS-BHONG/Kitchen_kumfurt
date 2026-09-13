@@ -135,7 +135,7 @@ export const Header = () => {
                             >
                                 <div>
                                     <h4 className="text-primary-red font-sans text-sm font-bold tracking-widest uppercase mb-4">Contact Us</h4>
-                                    <p className="text-white text-lg mb-2">+91 8888030786 / 7020171895</p>
+                                    <p className="text-white text-lg mb-2">+91 8888030786</p>
                                     <p className="text-gray-muted text-sm">kichenkumfurt@gmail.com</p>
                                 </div>
                                 <div>

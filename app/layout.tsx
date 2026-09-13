@@ -23,7 +23,7 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "name": "Kichen Kumfurt",
-    "telephone": ["+918888030786", "+917020171895"],
+    "telephone": "+918888030786",
     "email": "kichenkumfurt@gmail.com",
     "address": {
         "@type": "PostalAddress",

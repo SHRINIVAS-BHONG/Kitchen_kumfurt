@@ -10,7 +10,6 @@ export default function MaterialsPage() {
                 { title: "High-Gloss PU", desc: "Polyurethane finishes offering an ultra-premium, mirror-like gloss that resists scratches and moisture.", image: "/images/high-gloss-pu.jpg" },
                 { title: "Premium Laminates", desc: "Textured and matte European laminates that provide immense durability and a warm, tactile feel.", image: "/images/premium-materials.jpg" },
                 { title: "Acrylic", desc: "Non-toxic, high-gloss acrylic sheets pressed onto substrates, offering a mirror-like finish, seamless color vibrancy, and superior moisture resistance for modular kitchens.", image: "/images/acrylic.jpg" },
-                { title: "Natural Wood Veneers", desc: "Ethically sourced woods that bring organic luxury and unique grain patterns to your architectural space.", image: "/images/wood-veneers.jpg" },
                 { title: "Toughened Glass", desc: "Profile doors and backsplashes utilizing back-painted or tinted glass for a sleek, modern aesthetic.", image: "/images/toughened-glass.jpg" }
             ]
         },
