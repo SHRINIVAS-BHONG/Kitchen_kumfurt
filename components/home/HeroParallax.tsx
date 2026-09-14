@@ -18,12 +18,24 @@ export const HeroParallax = () => {
     const opacityHero = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
-        <section ref={heroRef} className="relative h-screen w-full flex flex-col items-center justify-center px-6 md:px-12 pt-20">
-            {/* Background Video/Image Placeholder */}
+        <section ref={heroRef} className="relative h-screen w-full flex flex-col items-center justify-center px-6 md:px-12 pt-20 overflow-hidden">
+            {/* Background Obsidian Noir Luxury Modular Kitchen Image */}
             <div className="absolute inset-0 z-0 bg-primary-black">
+                {/* Mobile portrait-optimized Obsidian Noir Kitchen */}
+                <img
+                    src="/images/hero-kitchen-mobile.jpg"
+                    alt="Obsidian Noir Luxury Modular Kitchen"
+                    className="block md:hidden w-full h-full object-cover object-center"
+                />
+                {/* Desktop widescreen Obsidian Noir Kitchen */}
+                <img
+                    src="/images/hero-luxury-kitchen.jpg"
+                    alt="Obsidian Noir Luxury Modular Kitchen"
+                    className="hidden md:block w-full h-full object-cover object-center"
+                />
+                {/* Gradient Overlays for optimal contrast and crystal clear luxury aesthetics */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-primary-black z-10" />
-                {/* Placeholder for high-res architecture photo */}
-                <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(#333 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+                <div className="absolute inset-0 bg-black/25 z-10" />
             </div>
 
             <motion.div

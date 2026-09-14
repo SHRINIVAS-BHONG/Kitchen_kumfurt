@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { HeroParallax } from "@/components/home/HeroParallax";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/Animations";
 import { LuxuryCard } from "@/components/ui/LuxuryCard";
-import { ChevronRight, ArrowDown } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -61,7 +61,7 @@ export default function Home() {
                         <LuxuryCard
                             title="Luxury Kitchens"
                             description="Precision-engineered culinary spaces combining German hardware with exquisite finishes."
-                            imageUrl="/images/luxury-kitchen.jpg"
+                            imageUrl="/images/hero-luxury-kitchen.jpg"
                             href="/kitchens"
                         />
                     </StaggerItem>

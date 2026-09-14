@@ -59,7 +59,7 @@ export const Footer = () => {
                         <div>
                             <h4 className="font-display font-bold text-sm text-white uppercase tracking-widest mb-4 border-l-2 border-primary-red pl-3">Services</h4>
                             <ul className="space-y-3">
-                                <li><Link href="/portfolio" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Luxury Kitchens</Link></li>
+                                <li><Link href="/kitchens" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Luxury Kitchens</Link></li>
                                 <li><Link href="/portfolio" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Wardrobes</Link></li>
                                 <li><Link href="/portfolio" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">TV Units</Link></li>
                                 <li><Link href="/materials" className="text-gray-muted/80 font-light text-sm hover:text-white transition-colors duration-300 block py-1">Materials</Link></li>

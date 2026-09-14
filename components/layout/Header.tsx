@@ -10,10 +10,11 @@ import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
+    { label: "Kitchens", href: "/kitchens" },
     { label: "Materials", href: "/materials" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Gallery", href: "/gallery" },
+    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
 ];
 
@@ -56,7 +57,7 @@ export const Header = () => {
                     
                     {/* Desktop Center Nav */}
                     <div className={`hidden xl:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 transition-opacity duration-300 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-                        {NAV_LINKS.slice(1, 5).map((link) => {
+                        {NAV_LINKS.slice(1, 6).map((link) => {
                             const isActive = pathname === link.href;
                             return (
                                 <Link key={link.label} href={link.href} className="relative group">
