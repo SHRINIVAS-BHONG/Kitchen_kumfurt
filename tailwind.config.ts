@@ -12,8 +12,8 @@ const config: Config = {
                 'primary-black': '#0A0E17',
                 'dark-gray': '#121826',
                 'card-gray': '#182030',
-                'primary-red': '#FF3344',
-                'red-hover': '#E6192E',
+                'primary-red': '#E51A2E',
+                'red-hover': '#C81023',
                 'gray-muted': '#94A3B8',
             },
             fontFamily: {

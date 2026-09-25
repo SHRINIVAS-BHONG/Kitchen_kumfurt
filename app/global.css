@@ -12,19 +12,28 @@
 
     /* Custom dark-mode scrollbar */
     ::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
     }
 
     ::-webkit-scrollbar-track {
-        background: #111111;
+        background: #0A0E17;
     }
 
     ::-webkit-scrollbar-thumb {
-        background: #333333;
+        background: #232B3E;
+        border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: #FF3344;
+        background: #E51A2E;
+    }
+
+    /* Hide heavy custom scrollbar on touch/mobile viewports to prevent layout intrusion */
+    @media (max-width: 768px) {
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
     }
 
     /* Smooth scrolling for anchor links */
@@ -44,10 +53,16 @@
 }
 
 @layer utilities {
-    /* Premium Noise Texture Overlay */
+    /* Premium Noise Texture Overlay - Disabled on mobile for buttery smooth 60fps scrolling */
     .bg-noise {
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
         pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+        .bg-noise {
+            display: none !important;
+        }
     }
 
     /* Ultra-smooth Glassmorphism */

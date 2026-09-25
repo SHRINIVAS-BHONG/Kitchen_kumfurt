@@ -30,9 +30,12 @@ export const Footer = () => {
                         <div className="pt-4">
                             <h4 className="font-sans text-xs font-bold text-white uppercase tracking-widest mb-4">Subscribe to our Newsletter</h4>
                             <div className="flex items-center">
+                                <label htmlFor="newsletter-email" className="sr-only">Email address</label>
                                 <input 
+                                    id="newsletter-email"
                                     type="email" 
                                     placeholder="Enter your email" 
+                                    aria-label="Email address for newsletter"
                                     className="bg-dark-gray/20 border border-white/10 rounded-l-md text-white px-5 py-3 w-full max-w-xs focus:outline-none focus:border-primary-red/50 transition-colors text-sm font-light placeholder:text-gray-muted/50"
                                 />
                                 <Button variant="primary" className="py-3 px-6 shrink-0 h-[46px] rounded-l-none rounded-r-md">
@@ -92,8 +95,17 @@ export const Footer = () => {
                         
                         {/* Social Icons */}
                         <div className="flex items-center gap-4 pt-4">
-                            {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                                <a key={i} href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-muted hover:bg-primary-red hover:text-white hover:border-primary-red hover:scale-105 transition-all duration-500 ease-[0.16,1,0.3,1] shadow-lg">
+                            {[
+                                { Icon: Instagram, name: "Instagram" },
+                                { Icon: Facebook, name: "Facebook" },
+                                { Icon: Twitter, name: "Twitter" }
+                            ].map(({ Icon, name }, i) => (
+                                <a 
+                                    key={i} 
+                                    href="#" 
+                                    aria-label={`Follow Kichen Kumfurt on ${name}`}
+                                    className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-muted hover:bg-primary-red hover:text-white hover:border-primary-red hover:scale-105 transition-all duration-500 ease-[0.16,1,0.3,1] shadow-lg"
+                                >
                                     <Icon className="w-4 h-4" />
                                 </a>
                             ))}
@@ -102,15 +114,16 @@ export const Footer = () => {
                 </div>
 
                 <div className="border-t border-dark-gray/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
-                    <p className="text-gray-muted/60 text-xs text-center md:text-left tracking-wide">
+                    <p className="text-gray-muted text-xs text-center md:text-left tracking-wide">
                         &copy; {new Date().getFullYear()} Kichen Kumfurt. All rights reserved.
                     </p>
                     
                     {/* Back to top */}
                     <motion.button 
                         onClick={scrollToTop}
+                        aria-label="Back to top of page"
                         whileHover={{ y: -5 }}
-                        className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white hover:text-primary-red transition-colors"
+                        className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white hover:text-primary-red transition-colors min-h-[44px]"
                     >
                         Back to Top <ArrowUp className="w-4 h-4" />
                     </motion.button>

@@ -40,6 +40,8 @@ export default function Home() {
                         <img 
                             src="/images/craftsmanship.jpg" 
                             alt="Uncompromising Craftsmanship - Premium Kitchen Details" 
+                            loading="lazy"
+                            decoding="async"
                             className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-[2000ms] ease-[0.16,1,0.3,1]"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-black/80 via-transparent to-transparent pointer-events-none" />
@@ -144,11 +146,15 @@ export default function Home() {
                 <FadeIn className="relative z-10 text-center max-w-4xl">
                     <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl text-white uppercase tracking-tighter mb-8 md:mb-10 text-balance">Ready to Elevate Your Space?</h2>
                     <p className="text-gray-muted/80 font-light text-lg md:text-2xl mb-12 md:mb-16 text-balance">Schedule a private consultation with our principal designer, Aashish Jajoo.</p>
-                    <Link href="/contact" className="flex justify-center">
-                        <Button variant="primary" className="bg-white !text-primary-black hover:bg-gray-muted border border-white h-[56px] text-sm">
+                    <div className="flex justify-center">
+                        <Button 
+                            href="/contact" 
+                            variant="primary" 
+                            className="bg-white !text-primary-black hover:bg-gray-muted border border-white h-[56px] text-sm"
+                        >
                             Contact Us Today
                         </Button>
-                    </Link>
+                    </div>
                 </FadeIn>
             </section>
 

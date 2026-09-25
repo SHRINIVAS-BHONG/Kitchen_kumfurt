@@ -73,15 +73,19 @@ export const Header = () => {
 
                     {/* Contact & CTA & Hamburger */}
                     <div className="flex items-center gap-6 relative z-50">
-
-                        <Link href="/contact" className={`hidden sm:flex transition-opacity duration-300 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} onClick={() => setMenuOpen(false)}>
-                            <Button variant="primary" className="shadow-lg shadow-primary-red/20 py-3 px-6">
-                                Consultation
-                            </Button>
-                        </Link>
+                        <Button 
+                            href="/contact"
+                            variant="primary" 
+                            className={`hidden sm:flex transition-opacity duration-300 shadow-lg shadow-primary-red/20 py-3 px-6 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`} 
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Consultation
+                        </Button>
                         <button 
                             onClick={() => setMenuOpen(!menuOpen)}
-                            className="p-2 text-white hover:text-primary-red transition-colors"
+                            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+                            aria-expanded={menuOpen}
+                            className="p-2 text-white hover:text-primary-red transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                         >
                             {menuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
                         </button>
@@ -147,11 +151,9 @@ export const Header = () => {
                                         Nanded - 431601
                                     </p>
                                 </div>
-                                <Link href="/contact" onClick={() => setMenuOpen(false)}>
-                                    <Button variant="primary" className="w-fit mt-4">
-                                        Book a Visit
-                                    </Button>
-                                </Link>
+                                <Button href="/contact" variant="primary" className="w-fit mt-4" onClick={() => setMenuOpen(false)}>
+                                    Book a Visit
+                                </Button>
                             </motion.div>
                         </div>
                     </motion.div>

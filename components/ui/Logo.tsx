@@ -8,7 +8,7 @@ export const Logo = ({ className = "" }: { className?: string }) => {
       <div className="w-[3.5rem] h-[3.5rem] shrink-0 flex items-center justify-center relative">
           <Image 
               src="/images/main_logo.png" 
-              alt="Logo" 
+              alt="Kichen Kumfurt" 
               fill
               className="object-contain scale-[1.75] translate-y-[2px] md:translate-y-[3px]" 
               priority 

@@ -4,6 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+import Link from "next/link";
+
 interface LuxuryCardProps {
     title: string;
     description?: string;
@@ -14,10 +16,10 @@ interface LuxuryCardProps {
 }
 
 export const LuxuryCard = ({ title, description, imageUrl, imagePlaceholder, href, className = "" }: LuxuryCardProps) => {
-    const CardContent = () => (
+    const CardInner = (
         <motion.div
             whileHover="hover"
-            className={`group relative overflow-hidden bg-card-gray border border-dark-gray/40 hover:border-dark-gray transition-all duration-700 ease-[0.16,1,0.3,1] rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 ${className}`}
+            className={`group relative overflow-hidden bg-card-gray border border-dark-gray/40 hover:border-dark-gray transition-all duration-700 ease-[0.16,1,0.3,1] rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 h-full flex flex-col ${className}`}
         >
             {/* Image Component or Placeholder */}
             <div className="relative w-full aspect-[4/3] bg-[#111111] overflow-hidden">
@@ -27,6 +29,8 @@ export const LuxuryCard = ({ title, description, imageUrl, imagePlaceholder, hre
                     <img 
                         src={imageUrl} 
                         alt={title} 
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-[1500ms] ease-[0.16,1,0.3,1]" 
                     />
                 ) : (
@@ -46,11 +50,13 @@ export const LuxuryCard = ({ title, description, imageUrl, imagePlaceholder, hre
             </div>
 
             {/* Content */}
-            <div className="p-8 relative z-20 -mt-12">
-                <h3 className="font-display text-2xl text-white mb-3 tracking-wide">{title}</h3>
-                {description && (
-                    <p className="text-gray-muted/80 text-sm leading-relaxed mb-6 font-light">{description}</p>
-                )}
+            <div className="p-8 relative z-20 -mt-12 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 className="font-display text-2xl text-white mb-3 tracking-wide">{title}</h3>
+                    {description && (
+                        <p className="text-gray-muted/80 text-sm leading-relaxed mb-6 font-light">{description}</p>
+                    )}
+                </div>
             </div>
 
             {/* Hover Glow */}
@@ -58,5 +64,13 @@ export const LuxuryCard = ({ title, description, imageUrl, imagePlaceholder, hre
         </motion.div>
     );
 
-    return <CardContent />;
+    if (href) {
+        return (
+            <Link href={href} className="block h-full group focus:outline-none focus:ring-2 focus:ring-primary-red/50 rounded-2xl">
+                {CardInner}
+            </Link>
+        );
+    }
+
+    return CardInner;
 };
