@@ -44,7 +44,7 @@ export const HeroParallax = () => {
             >
                 <FadeIn delay={0.2} direction="up">
                     <p className="font-sans text-gray-muted text-[9px] sm:text-xs uppercase tracking-[0.4em] font-medium mb-6 mt-4 sm:mt-0">
-                        Est. 2024 &mdash; Nanded
+                        Est. 2019 &mdash; Nanded
                     </p>
                 </FadeIn>
 

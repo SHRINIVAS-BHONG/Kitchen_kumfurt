@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
+  /* Dynamic deployment on Netlify/Vercel */
 };
 
 module.exports = nextConfig;
