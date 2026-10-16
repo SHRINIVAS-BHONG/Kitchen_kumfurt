@@ -64,7 +64,7 @@ export default function Home() {
                             title="Luxury Kitchens"
                             description="Precision-engineered culinary spaces combining German hardware with exquisite finishes."
                             imageUrl="/images/hero-luxury-kitchen.jpg"
-                            href="/kitchens"
+                            href="/portfolio"
                         />
                     </StaggerItem>
                     <StaggerItem>
