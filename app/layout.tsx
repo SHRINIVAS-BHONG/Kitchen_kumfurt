@@ -42,6 +42,7 @@ const jsonLd = {
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { DussehraAdModal } from "@/components/ui/DussehraAdModal";
 
 export default function RootLayout({
     children,
@@ -59,6 +60,7 @@ export default function RootLayout({
             <body className={`${inter.variable} ${playfair.variable} bg-primary-black text-white font-sans antialiased min-h-screen flex flex-col`}>
                 {/* Premium Global Noise Texture */}
                 <div className="fixed inset-0 z-[100] bg-noise pointer-events-none mix-blend-overlay" />
+                <DussehraAdModal />
                 <Header />
                 <main className="flex-1">
                     {children}

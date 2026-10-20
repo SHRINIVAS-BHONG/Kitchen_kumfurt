@@ -35,3 +35,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Reports and scripts
+CHANGES_REPORT.*
+*.pdf
+*report*.md
+*REPORT*.md
+*.py
